@@ -422,7 +422,6 @@ Gogs를 OpenShift 환경에 쉽게 배포하기 위해 template을 작성하여 
   ![02_topolozy](https://github.com/justone0127/Gogs-Deployment-on-restricted-network-enviornment/blob/main/images/02_topolozy.png)
 
 
-
 ### 4. Gogs 접속
 
 생성된 라우트를 통해 gogs에 접속할 수 있으며 계정 생성 및 서비스 사용이 가능합니다.
