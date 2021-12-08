@@ -413,13 +413,13 @@ Gogs를 OpenShift 환경에 쉽게 배포하기 위해 template을 작성하여 
 
   콘솔 접속 > 개발자 콘솔 변경 > + Add > 개발자 카탈로그 > 모든 서비스 > gogs 검색 > gogs template를 사용하여 배포 진행
 
-  ![01_gogs_template](https://github.com/justone0127/Gogs-Deployment-on-restricted-network-enviornment/blob/main/01_gogs_template.png)
+  ![01_gogs_template](https://github.com/justone0127/Gogs-Deployment-on-restricted-network-enviornment/tree/main/images)
 
 - gogs topolozy 
 
   배포가 완료되면 다음과 같이 `gogs-postgresql` Pod와 `gogs` Pod가 정상적으로 올라옵니다.
 
-  ![02_topolozy](https://github.com/justone0127/Gogs-Deployment-on-restricted-network-enviornment/blob/main/02_topolozy.png)
+  ![02_topolozy](https://github.com/justone0127/Gogs-Deployment-on-restricted-network-enviornment/blob/main/images/02_topolozy.png)
 
 
 
@@ -427,5 +427,5 @@ Gogs를 OpenShift 환경에 쉽게 배포하기 위해 template을 작성하여 
 
 생성된 라우트를 통해 gogs에 접속할 수 있으며 계정 생성 및 서비스 사용이 가능합니다.
 
-![03_gogs](https://github.com/justone0127/Gogs-Deployment-on-restricted-network-enviornment/blob/main/03_gogs.png)
+![03_gogs](https://github.com/justone0127/Gogs-Deployment-on-restricted-network-enviornment/blob/main/images/03_gogs.png)
 
