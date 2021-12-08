@@ -413,7 +413,7 @@ Gogs를 OpenShift 환경에 쉽게 배포하기 위해 template을 작성하여 
 
   콘솔 접속 > 개발자 콘솔 변경 > + Add > 개발자 카탈로그 > 모든 서비스 > gogs 검색 > gogs template를 사용하여 배포 진행
 
-  ![01_gogs_template](https://github.com/justone0127/Gogs-Deployment-on-restricted-network-enviornment/tree/main/images)
+  ![01_gogs_template](https://github.com/justone0127/Gogs-Deployment-on-restricted-network-enviornment/blob/main/images/01_gogs_template.png)
 
 - gogs topolozy 
 
