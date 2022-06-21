@@ -7,9 +7,9 @@
 - 이미지 복사
 
   ```bash
-  skopeo copy --dest-creds admin:r3dh4t1! --dest-tls-verify=false docker://docker.io/openshiftdemos/gogs:latest docker://ext-registry.rhocp4.nirs.go.kr:5000/gogs:latest
+  skopeo copy --dest-creds ${USER}:${PASSWORD} --dest-tls-verify=false docker://docker.io/openshiftdemos/gogs:latest docker://${REGISTRY_HOST}:${PORT}/gogs:latest
   
-  skopeo copy --src-creds rhn-support-hyou:You2707you! --dest-creds admin:r3dh4t1! --dest-tls-verify=false docker://registry.redhat.io/rhscl/postgresql-96-rhel7:latest docker://ext-registry.rhocp4.nirs.go.kr:5000/postgresql-96-rhel7:latest
+  skopeo copy --src-creds ${USER}:${PASSWORD} --dest-creds ${USER}:${PASSWORD} --dest-tls-verify=false docker://registry.redhat.io/rhscl/postgresql-96-rhel7:latest docker://${REGISTRY_HOST}:${PORT}/postgresql-96-rhel7:latest
   ```
 
 - 이미지 import
@@ -17,9 +17,9 @@
   oc import-image 명령어를 사용하여 OpenShift Cluster 환경에 image straeam으로 이미지를 import 합니다.
 
   ```bash
-  oc import-image postgresql-96-rhel7:latest --from=ext-registry.rhocp4.nirs.go.kr:5000/postgresql-96-rhel7:latest --confirm --insecure -n openshift
-  oc import-image gogs:latest --from=ext-registry.rhocp4.nirs.go.kr:5000/gogs:latest --confirm --insecure -n openshift
-  oc import-image gogs:latest --from=ext-registry.rhocp4.nirs.go.kr:5000/gogs:latest --confirm --insecure -n gogs
+  oc import-image postgresql-96-rhel7:latest --from=${REGISTRY_HOST}:${PORT}/postgresql-96-rhel7:latest --confirm --insecure -n openshift
+  oc import-image gogs:latest --from=${REGISTRY_HOST}:${PORT}/gogs:latest --confirm --insecure -n openshift
+  oc import-image gogs:latest --from=${REGISTRY_HOST}:${PORT}/gogs:latest --confirm --insecure -n gogs
   ```
 
 
@@ -272,7 +272,7 @@ Gogs를 OpenShift 환경에 쉽게 배포하기 위해 template을 작성하여 
       - name: "${GOGS_VERSION}"
         from:
           kind: DockerImage
-          name: ext-registry.rhocp4.nirs.go.kr:5000/gogs:${GOGS_VERSION}
+          name: ${REGISTRY_HOST}:${PORT}/gogs:${GOGS_VERSION}
         importPolicy: {}
         annotations:
           description: The Gogs git server docker image
